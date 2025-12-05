@@ -185,14 +185,7 @@ const Keto1100PlanView: React.FC<Keto1100PlanViewProps> = ({ onBack }) => {
                 </button>
             </div>
             {altError && <div className="mt-4 text-red-500 dark:text-red-400 font-bold">{altError}</div>}
-            {alternativeResult && (
-                <div className="mt-6 p-6 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl border-t-4 border-yellow-500 shadow-md">
-                    <h4 className="text-xl font-bold text-yellow-800 dark:text-yellow-300 mb-3">✅ اقتراح بديل لك:</h4>
-                    <div className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-                        {alternativeResult}
-                    </div>
-                </div>
-            )}
+            {/* Removed alternativeResult display block as per user request */}
         </section>
 
         {/* Overview Macros */}
@@ -279,13 +272,13 @@ const Keto1100PlanView: React.FC<Keto1100PlanViewProps> = ({ onBack }) => {
                 <div className="flex items-start">
                     <span className="text-2xl text-red-600 dark:text-red-400 ml-3">1.</span>
                     <div>
-                        <strong className="text-red-600 dark:text-red-400">الإلكتروليتات هي المفتاح:</strong> عند تقليل الكربوهيدرات، يفقد الجسم الكثير من الماء والإلكتروليتات. <span className="font-extrabold">يجب</span> زيادة تناول الملح على الأطعمة وشرب مرق العظام يومياً.
+                        <strong className="text-red-600 dark:text-red-400">الإلكتروليتات هي المفتاح:</strong> عند تقليل الكربوهيدرات، يفقد الجسم الكثير من الماء والإلكتروليتات (الصوديوم، البوتاسيوم، المغنيسيوم). <span className="font-extrabold">يجب</span> زيادة تناول الملح على الأطعمة وشرب مرق العظام يومياً إن أمكن، لتجنب "إنفلونزا الكيتو".
                     </div>
                 </div>
                 <div className="flex items-start">
                     <span className="text-2xl text-green-600 dark:text-green-400 ml-3">2.</span>
                     <div>
-                        <strong className="text-green-600 dark:text-green-400">جودة الدهون:</strong> لا تعني زيادة الدهون تناول أي دهون. ركز على الدهون الطبيعية مثل زيت الزيتون، الأفوكادو، الزبدة.
+                        <strong className="text-green-600 dark:text-green-400">جودة الدهون:</strong> لا تعني زيادة الدهون تناول أي دهون. ركز على الدهون الطبيعية مثل زيت الزيتون، الأفوكادو، الزبدة، وزيت جوز الهند/MCT.
                     </div>
                 </div>
                 <div className="flex items-start">
