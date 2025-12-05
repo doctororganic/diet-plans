@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface Keto1700PlanViewProps {
@@ -26,9 +25,10 @@ const Keto1700PlanView: React.FC<Keto1700PlanViewProps> = ({ onBack }) => {
         </header>
 
         <div className="p-6 md:p-10 space-y-12">
-            <section className="bg-green-50 dark:bg-green-900/10 rounded-2xl p-8 shadow-inner border border-green-100 dark:border-green-800/30">
-                <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-6 flex items-center gap-2">
-                    <span className="text-3xl">🍽️</span> توزيع المغذيات الكبرى (الماكروز)
+            {/* Notes */}
+            <section className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-8 shadow-inner border border-purple-100 dark:border-purple-800/30">
+                <h3 className="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-6 flex items-center gap-2">
+                    <span className="text-3xl">💡</span> ملاحظات هامة قبل البدء:
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-6">التوزيع المقترح لنظام 1700 سعرة حرارية.</p>
                 <div className="overflow-hidden rounded-xl border border-green-200 dark:border-green-800">
