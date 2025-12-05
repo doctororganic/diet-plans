@@ -28,7 +28,16 @@ const generatePlans = (category: string, iconKey: string, prefix: string): DietC
 export const DIET_GROUPS: DietCategoryGroup[] = [
   generatePlans('نظام الكيتو دايت', 'keto', 'keto'),
   generatePlans('نظام الكارب المنخفض', 'low-carb', 'low-carb'),
-  generatePlans('نظام البحر الأبيض المتوسط', 'mediterranean', 'mediterranean'),
   generatePlans('النظام المتوازن', 'balanced', 'balanced'),
-  generatePlans('نظام المضاد للالتهابات والصيام المتقطع', 'intermittent', 'intermittent'),
+  {
+    name: 'نظام المضاد للالتهابات والصيام المتقطع (قريباً)',
+    icon: 'intermittent',
+    plans: CALORIE_RANGE.map((cal) => ({
+      id: `intermittent-${cal}`,
+      category: 'نظام المضاد للالتهابات والصيام المتقطع',
+      calories: cal,
+      icon: 'intermittent',
+      title: `نظام المضاد للالتهابات والصيام المتقطع - ${cal} سعر حراري`,
+    })),
+  },
 ];

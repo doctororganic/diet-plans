@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
+import { IconBreakfast, IconLunch, IconDinner } from './Icons';
 
 interface Keto1100PlanViewProps {
   onBack: () => void;
@@ -269,7 +270,55 @@ const Keto1100PlanView: React.FC<Keto1100PlanViewProps> = ({ onBack }) => {
             ))}
         </section>
 
-        {/* Feature 1: Shopping List */}
+        {/* Important Notes Section */}
+        <section className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white border-r-4 border-yellow-500 pr-3 mb-6">
+                ملاحظات هامة لنظام الكيتو
+            </h2>
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl shadow-inner">
+                <div className="flex items-start">
+                    <span className="text-2xl text-red-600 dark:text-red-400 ml-3">1.</span>
+                    <div>
+                        <strong className="text-red-600 dark:text-red-400">الإلكتروليتات هي المفتاح:</strong> عند تقليل الكربوهيدرات، يفقد الجسم الكثير من الماء والإلكتروليتات. <span className="font-extrabold">يجب</span> زيادة تناول الملح على الأطعمة وشرب مرق العظام يومياً.
+                    </div>
+                </div>
+                <div className="flex items-start">
+                    <span className="text-2xl text-green-600 dark:text-green-400 ml-3">2.</span>
+                    <div>
+                        <strong className="text-green-600 dark:text-green-400">جودة الدهون:</strong> لا تعني زيادة الدهون تناول أي دهون. ركز على الدهون الطبيعية مثل زيت الزيتون، الأفوكادو، الزبدة.
+                    </div>
+                </div>
+                <div className="flex items-start">
+                    <span className="text-2xl text-blue-600 dark:text-blue-400 ml-3">3.</span>
+                    <div>
+                        <strong className="text-blue-600 dark:text-blue-400">ترطيب الجسم:</strong> اشرب ما لا يقل عن 2.5 إلى 3 لترات من الماء يومياً.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Subscription Box - NEWLY ADDED */}
+        <section className="mt-12 p-8 bg-gradient-to-r from-purple-600 to-emerald-500 text-white rounded-3xl shadow-xl text-center">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                انضم إلينا لرحلة صحية أفضل!
+            </h2>
+            <p className="text-lg md:text-xl font-light mb-8 opacity-90">
+                اشترك الآن لتلقي المزيد من الخطط، الوصفات، والنصائح الحصرية مباشرة إلى بريدك الإلكتروني.
+            </p>
+            <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdAIuHgA038SW1ykcF3VqTTHrpvsagj3i0LiDoyPEKya2LQOQ/viewform?usp=publish-editor" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-white text-purple-700 hover:text-purple-900 font-black py-4 px-10 rounded-full text-lg shadow-2xl hover:scale-105 transition-all duration-300 transform"
+            >
+                اشترك وتابع الآن
+                <svg className="w-6 h-6 mr-3 rtl:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <svg className="w-6 h-6 ml-3 ltr:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </section>
+
+
+        {/* Feature 1: Shopping List Call to Action */}
         <footer className="text-center mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 font-medium">
                 هل أنت مستعد لبدء التسوق؟ دع الذكاء الاصطناعي يُجهز لك قائمة مشتريات مُركَّزة ومُنظمة!
@@ -282,7 +331,7 @@ const Keto1100PlanView: React.FC<Keto1100PlanViewProps> = ({ onBack }) => {
                 {isGeneratingList ? 'جاري التجهيز...' : '✨ أريد قائمة التسوق المُفصلة!'}
             </button>
 
-            {listError && <p className="mt-4 text-red-500 font-bold">{listError}</p>}
+            {listError && <p className="mt-4 text-red-500 dark:text-red-400 font-bold">{listError}</p>}
 
             {shoppingList && (
                 <div className="mt-8 p-6 bg-green-50 dark:bg-green-900/20 rounded-xl shadow-inner text-right border border-green-100 dark:border-green-800">
